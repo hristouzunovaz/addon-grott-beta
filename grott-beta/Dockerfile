@@ -15,7 +15,7 @@ COPY script.sh /app/script.sh
 RUN chmod a+x /app/script.sh
 
 WORKDIR /app
-RUN curl -Lk "https://github.com/johanmeijer/grott/archive/$GIT_REF.zip" --output files.zip && unzip -o files.zip && rm files.zip && mv grott-*/*.py ./
+RUN curl -Lk "https://github.com/hristouzunovaz/grott/archive/$GIT_REF.zip" --output files.zip && unzip -o files.zip && rm files.zip && mv grott-*/*.py ./
 
 COPY requirements.txt requirements.txt
 #Install required python packages
@@ -39,10 +39,10 @@ LABEL \
         io.hass.arch="${BUILD_ARCH}" \
         io.hass.type="addon" \
         io.hass.version=${BUILD_VERSION} \
-        maintainer="egguy <etienne.guilluy@gmail.com>" \
+        maintainer="hristouzunov <hristouzunovaz@gmail.com>" \
         org.opencontainers.image.title="${BUILD_NAME}" \
         org.opencontainers.image.description="${BUILD_DESCRIPTION}" \
-        org.opencontainers.image.authors="egguy <etienne.guilluy@gmail.com>" \
+        org.opencontainers.image.authors="hristouzunov <hristouzunovaz@gmail.com>" \
         org.opencontainers.image.source="https://github.com/${BUILD_REPOSITORY}" \
         org.opencontainers.image.documentation="https://github.com/${BUILD_REPOSITORY}/blob/main/README.md" \
         org.opencontainers.image.created=${BUILD_DATE} \
